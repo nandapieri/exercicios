@@ -1,0 +1,37 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Funcionario;
+
+public class ProgramaFuncionario {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Integer id;
+		Double salario;
+		String nome;
+		
+		List <Funcionario> lista = new ArrayList();
+		
+		System.out.println("Numero de funcionarios");
+		int n = sc.nextInt();
+		
+		for (int i=0; i<n; i++) {
+			sc.nextLine();
+			System.out.println("Digite o id: ");
+			id = sc.nextInt();
+			System.out.println("Digite o Nome: ");
+			nome = sc.nextLine();
+			System.out.println("Digite o salario: ");
+			salario = sc.nextDouble();
+			lista.add(new Funcionario(id,nome,salario));
+		}
+		
+		sc.close();
+	}
+
+}

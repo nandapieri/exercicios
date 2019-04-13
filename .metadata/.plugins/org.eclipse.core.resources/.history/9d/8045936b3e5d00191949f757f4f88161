@@ -1,0 +1,48 @@
+package entities;
+
+public class Aluguel {
+	private String nomeInquilino;
+	private String emailInquilino;
+	private int numQuarto;
+	
+	public Aluguel() {
+
+	}
+
+	public Aluguel(String nomeInquilino, String emailInquilino, int numQuarto) {
+		super();
+		this.nomeInquilino = nomeInquilino;
+		this.emailInquilino = emailInquilino;
+		this.numQuarto = numQuarto;
+	}
+
+	public String getNomeInquilino() {
+		return nomeInquilino;
+	}
+
+	public void setNomeInquilino(String nomeInquilino) {
+		this.nomeInquilino = nomeInquilino;
+	}
+
+	public String getEmailInquilino() {
+		return emailInquilino;
+	}
+
+	public void setEmailInquilino(String emailInquilino) {
+		this.emailInquilino = emailInquilino;
+	}
+
+	public int getNumQuarto() {
+		return numQuarto;
+	}
+
+	public void setNumQuarto(int numQuarto) {
+		this.numQuarto = numQuarto;
+	}
+	
+	public String toString() {
+		
+	}
+	
+	
+}

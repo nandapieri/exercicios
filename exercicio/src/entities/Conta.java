@@ -1,0 +1,63 @@
+package entities;
+
+public class Conta {
+	
+	private final double taxaDeSaque = 5.00;
+	
+	private int numeroDaConta;
+	private String nomeDoTitular;
+	private double saldo;
+	
+	public Conta () {
+		
+	}
+	
+	public Conta(int numeroDaConta, String nomeDoTitular, double depositoInicial) {
+		
+		this.numeroDaConta = numeroDaConta;
+		this.nomeDoTitular = nomeDoTitular;
+		deposito(depositoInicial);
+	}
+	
+	public Conta(int numeroDaConta, String nomeDoTitular) {
+			
+			this.numeroDaConta = numeroDaConta;
+			this.nomeDoTitular = nomeDoTitular;
+		}
+	
+	public int getNumeroDaConta() {
+		return numeroDaConta;
+	}
+	
+	public String getNomeDoTitular() {
+		return nomeDoTitular;
+	}
+	
+	public void setNomeDoTitular(String nomeDoTitular) {
+		this.nomeDoTitular = nomeDoTitular;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	public void deposito (double valor) {
+		this.saldo += valor;
+	}
+	
+	public void saque (double valor) {
+		this.saldo -= (valor + taxaDeSaque);
+	}
+	
+	public String toString () {	
+		return "Numero da conta: "+
+				+this.numeroDaConta+
+				", Nome do titular: "+
+				this.nomeDoTitular+
+				" , Saldo: R$ "+
+				String.format("%.2f", this.saldo);
+	}
+
+
+
+}

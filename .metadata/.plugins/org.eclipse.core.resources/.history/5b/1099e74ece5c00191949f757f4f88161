@@ -1,0 +1,64 @@
+package application;
+
+import java.util.Scanner;
+
+import entities.Conta;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		String titular;
+		int numeroConta;
+		double valorInicial;
+		char depositoInicial;
+		boolean contaCriada = false;
+		Conta conta = new Conta();
+		double deposito, saque;
+		 
+		//entrada de dados
+		System.out.println("Entre com o numero da conta: ");
+		numeroConta = sc.nextInt();
+		System.out.println("Entre com o nome do titular: ");
+		titular = sc.nextLine();
+		System.out.println("Ha deposito inicial? s/n");
+		depositoInicial = sc.next().charAt(0);
+		
+		//decisão do construtor
+		while (!contaCriada) {
+			if (depositoInicial == 's') {
+				System.out.println("Digite o valor do deposito inicial: ");
+				valorInicial = sc.nextDouble();
+				conta = new Conta(numeroConta, titular, valorInicial);
+				contaCriada = true;
+			} else if (depositoInicial == 'n') {
+				conta = new Conta(numeroConta, titular);
+				contaCriada = true;
+			} else { 
+				System.out.println("Ha deposito inicial? s/n");
+				depositoInicial = sc.next().charAt(0);
+			}
+		}
+		System.out.println("Dados da conta:");
+		System.out.println(conta.toString());
+		
+		//operações
+		System.out.println("Valor de deposito: ");
+		deposito = sc.nextDouble();
+		conta.deposito(deposito);
+		System.out.println("Dados da conta:");
+		System.out.println(conta.toString());
+		
+		System.out.println("Valor de saque: ");
+		saque = sc.nextDouble();
+		conta.saque(saque);
+		System.out.println("Dados da conta:");
+		System.out.println(conta.toString());
+		
+		sc.close();
+
+	}
+
+}

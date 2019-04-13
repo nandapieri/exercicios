@@ -1,0 +1,15 @@
+package course;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		String s = "Teste";
+
+		System.out.printf("Hello World %s", s);
+		System.out.println("Hello World");
+	}
+
+}

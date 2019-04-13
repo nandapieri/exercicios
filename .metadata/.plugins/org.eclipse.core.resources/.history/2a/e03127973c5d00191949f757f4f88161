@@ -1,0 +1,10 @@
+package entities;
+
+public class Quarto {
+	String nomeInquilino;
+	String emailInquilino;
+	int numQuarto;
+	
+	
+
+}
